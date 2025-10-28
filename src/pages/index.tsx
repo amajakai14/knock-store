@@ -19,30 +19,38 @@ export default function Home() {
                 alt="Knock Store Logo"
                 className="h-10 w-auto"
               />
-              <span className="text-sm font-light text-gray-500 hidden sm:block"
-              >Store Co., Ltd</span>
+              <span className="text-sm font-light text-gray-500 hidden sm:block">
+                Store Co., Ltd
+              </span>
             </a>
             <div className="space-x-4">
               <a
                 href="#about"
                 className="text-gray-600 font-medium transition duration-150 ease-in-out hidden sm:inline-block"
-                onMouseEnter={(e) => e.currentTarget.style.color = "#2E3192"}
-                onMouseLeave={(e) => e.currentTarget.style.color = "#4b5563"}
-              >เกี่ยวกับเรา</a>
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#2E3192")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#4b5563")}
+              >
+                เกี่ยวกับเรา
+              </a>
               <a
                 href="#products"
                 className="text-gray-600 font-medium transition duration-150 ease-in-out hidden sm:inline-block"
-                onMouseEnter={(e) => e.currentTarget.style.color = "#2E3192"}
-                onMouseLeave={(e) => e.currentTarget.style.color = "#4b5563"}
-              >ผลิตภัณฑ์</a>
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#2E3192")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#4b5563")}
+              >
+                ผลิตภัณฑ์
+              </a>
               <a
                 href="#services"
                 className="text-gray-600 font-medium transition duration-150 ease-in-out hidden sm:inline-block"
-                onMouseEnter={(e) => e.currentTarget.style.color = "#2E3192"}
-                onMouseLeave={(e) => e.currentTarget.style.color = "#4b5563"}
-              >บริการ</a>
-              <a href="#contact" className="btn-primary py-2 px-4 text-sm"
-              >ติดต่อเรา</a>
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#2E3192")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#4b5563")}
+              >
+                บริการ
+              </a>
+              <a href="#contact" className="btn-primary py-2 px-4 text-sm">
+                ติดต่อเรา
+              </a>
             </div>
           </div>
         </div>
@@ -55,9 +63,7 @@ export default function Home() {
           className="diagonal-bg pt-20 pb-40 text-white overflow-hidden"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20-content">
-            <div
-              className="grid md:grid-cols-2 gap-10 items-center text-center md:text-left"
-            >
+            <div className="grid md:grid-cols-2 gap-10 items-center text-center md:text-left">
               {/* Left Column: Text and CTA */}
               <div>
                 <span
@@ -66,36 +72,23 @@ export default function Home() {
                 >
                   The Essential F&B Supplier
                 </span>
-                <h1
-                  className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-tight"
-                >
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
                   คู่ค้าที่ขาดไม่ได้
-                  <span className="block mt-2"
-                    style={{ color: "#F7931E" }}
-                    >ของทุกร้านอาหารทั่วประเทศ</span
-                  >
+                  <span className="block mt-2" style={{ color: "#F7931E" }}>
+                    ของทุกร้านอาหารทั่วประเทศ
+                  </span>
                 </h1>
-                <p
-                  className="mt-4 max-w-lg mx-auto md:mx-0 text-xl text-gray-100 font-light"
-                >
+                <p className="mt-4 max-w-lg mx-auto md:mx-0 text-xl text-gray-100 font-light">
                   เราเชี่ยวชาญในการจัดจำหน่ายของใช้สิ้นเปลืองและโซลูชั่นโลจิสติกส์
                   เพื่อช่วยให้ธุรกิจร้านอาหารของคุณเติบโตได้อย่างมั่นคง
                 </p>
-                <div
-                  className="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start"
-                >
+                <div className="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
                   {/* Button "ดูผลิตภัณฑ์ทั้งหมด" - NEW DESIGN */}
-                  <a
-                    href="#products"
-                    className="btn-primary-hero"
-                  >
+                  <a href="#products" className="btn-primary-hero">
                     ดูผลิตภัณฑ์ทั้งหมด
                   </a>
                   {/* Button "ระบบขนส่งของเรา" - NEW DESIGN */}
-                  <a
-                    href="#services"
-                    className="btn-secondary-hero"
-                  >
+                  <a href="#services" className="btn-secondary-hero">
                     ระบบขนส่งของเรา
                   </a>
                 </div>
@@ -103,16 +96,14 @@ export default function Home() {
 
               {/* Right Column: Visual Element Placeholder */}
               <div className="hidden md:block">
-                <div
-                  className="bg-white/10 p-6 rounded-3xl shadow-2xl backdrop-blur-sm transform rotate-3 scale-95 transition-transform duration-500"
-                >
-                  <p className="text-xl font-bold mb-2"
-                    style={{ color: "#F7931E" }}>
+                <div className="bg-white/10 p-6 rounded-3xl shadow-2xl backdrop-blur-sm transform rotate-3 scale-95 transition-transform duration-500">
+                  <p
+                    className="text-xl font-bold mb-2"
+                    style={{ color: "#F7931E" }}
+                  >
                     KNOCK STORE SUPPLY CHAIN
                   </p>
-                  <div
-                    className="h-64 flex items-center justify-center text-lg text-gray-200 border-2 border-dashed border-gray-400 rounded-xl"
-                  >
+                  <div className="h-64 flex items-center justify-center text-lg text-gray-200 border-2 border-dashed border-gray-400 rounded-xl">
                     โมเดล 3D/ภาพประกอบแสดง อาคาร, รถขนส่ง, และกล่องสินค้า
                   </div>
                 </div>
@@ -123,9 +114,7 @@ export default function Home() {
 
         {/* New Section: CEO Quote (Fixed Overlap) */}
         <section id="ceo-quote" className="py-12 md:py-16 bg-f7f7f7">
-          <div
-            className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 md:-mt-16 z-20"
-          >
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 md:-mt-16 z-20">
             <div className="p-8 md:p-10 rounded-3xl quote-style card-shadow">
               <p
                 className="text-xl sm:text-2xl italic font-medium leading-relaxed z-20-content"
@@ -139,8 +128,10 @@ export default function Home() {
                 <p className="text-right text-lg font-bold text-gray-800">
                   วรวิทย์ วิวัฒนารรรม
                 </p>
-                <p className="text-right text-xs font-semibold"
-                  style={{ color: "#F7931E" }}>
+                <p
+                  className="text-right text-xs font-semibold"
+                  style={{ color: "#F7931E" }}
+                >
                   Voravit wiwatthanatham | ประธานกรรมการ
                 </p>
               </div>
@@ -152,8 +143,10 @@ export default function Home() {
         <section id="about" className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-extrabold mb-3"
-                style={{ color: "#2E3192" }}>
+              <h2
+                className="text-4xl font-extrabold mb-3"
+                style={{ color: "#2E3192" }}
+              >
                 เกี่ยวกับบริษัท (ABOUT COMPANY)
               </h2>
               <p className="text-xl text-gray-500 max-w-3xl mx-auto">
@@ -165,15 +158,11 @@ export default function Home() {
 
             {/* Mission & Vision Cards (Modern Numbered Style) */}
             <div className="grid md:grid-cols-2 gap-8">
-              <div
-                className="p-8 bg-white rounded-xl card-shadow border-l-4 border-amber-500 about-card transition duration-300 hover:shadow-xl hover:translate-y-[-2px]"
-              >
-                <span className="text-5xl font-extrabold text-amber-600 block mb-3"
-                  >01</span
-                >
-                <h3
-                  className="text-2xl font-bold text-blue-900 mb-3 flex items-center"
-                >
+              <div className="p-8 bg-white rounded-xl card-shadow border-l-4 border-amber-500 about-card transition duration-300 hover:shadow-xl hover:translate-y-[-2px]">
+                <span className="text-5xl font-extrabold text-amber-600 block mb-3">
+                  01
+                </span>
+                <h3 className="text-2xl font-bold text-blue-900 mb-3 flex items-center">
                   <svg
                     className="w-6 h-6 mr-2 text-amber-600"
                     fill="none"
@@ -196,15 +185,11 @@ export default function Home() {
                   เรามุ่งหวังเพื่อสร้างมาตรฐานใหม่ของบริการซัพพลายเออร์ที่เหนือกว่าสำหรับธุรกิจอาหาร
                 </p>
               </div>
-              <div
-                className="p-8 bg-white rounded-xl card-shadow border-l-4 border-blue-900 about-card transition duration-300 hover:shadow-xl hover:translate-y-[-2px]"
-              >
-                <span className="text-5xl font-extrabold text-blue-900 block mb-3"
-                  >02</span
-                >
-                <h3
-                  className="text-2xl font-bold text-blue-900 mb-3 flex items-center"
-                >
+              <div className="p-8 bg-white rounded-xl card-shadow border-l-4 border-blue-900 about-card transition duration-300 hover:shadow-xl hover:translate-y-[-2px]">
+                <span className="text-5xl font-extrabold text-blue-900 block mb-3">
+                  02
+                </span>
+                <h3 className="text-2xl font-bold text-blue-900 mb-3 flex items-center">
                   <svg
                     className="w-6 h-6 mr-2 text-blue-900"
                     fill="none"
@@ -236,15 +221,14 @@ export default function Home() {
               </h3>
               <div className="grid lg:grid-cols-3 gap-8">
                 {/* 2022 */}
-                <div
-                  className="p-6 bg-white rounded-xl border-t-4 border-amber-500 transition duration-300 hover:shadow-xl card-shadow"
-                >
+                <div className="p-6 bg-white rounded-xl border-t-4 border-amber-500 transition duration-300 hover:shadow-xl card-shadow">
                   <div className="flex justify-between items-center mb-2">
-                    <h4 className="text-3xl font-extrabold text-blue-900">2022</h4>
-                    <span
-                      className="text-sm font-semibold text-white bg-blue-900 rounded-full px-3 py-1"
-                    >Expansion</span
-                    >
+                    <h4 className="text-3xl font-extrabold text-blue-900">
+                      2022
+                    </h4>
+                    <span className="text-sm font-semibold text-white bg-blue-900 rounded-full px-3 py-1">
+                      Expansion
+                    </span>
                   </div>
                   <p className="text-gray-700 font-medium border-t pt-3">
                     เริ่มต้นแคมเปญ **"สั่งวันนี้ได้รับของวันพรุ่งนี้"**
@@ -252,15 +236,14 @@ export default function Home() {
                   </p>
                 </div>
                 {/* 2023 */}
-                <div
-                  className="p-6 bg-white rounded-xl border-t-4 border-amber-500 transition duration-300 hover:shadow-xl card-shadow"
-                >
+                <div className="p-6 bg-white rounded-xl border-t-4 border-amber-500 transition duration-300 hover:shadow-xl card-shadow">
                   <div className="flex justify-between items-center mb-2">
-                    <h4 className="text-3xl font-extrabold text-blue-900">2023</h4>
-                    <span
-                      className="text-sm font-semibold text-white bg-blue-900 rounded-full px-3 py-1"
-                    >Partnership</span
-                    >
+                    <h4 className="text-3xl font-extrabold text-blue-900">
+                      2023
+                    </h4>
+                    <span className="text-sm font-semibold text-white bg-blue-900 rounded-full px-3 py-1">
+                      Partnership
+                    </span>
                   </div>
                   <p className="text-gray-700 font-medium border-t pt-3">
                     ขยายฐานลูกค้าหลักกลุ่มร้านอาหารหลายสาขา เช่น ย่างเนย,
@@ -268,19 +251,19 @@ export default function Home() {
                   </p>
                 </div>
                 {/* 2024 - Present */}
-                <div
-                  className="p-6 bg-white rounded-xl border-t-4 border-amber-500 transition duration-300 hover:shadow-xl card-shadow"
-                >
+                <div className="p-6 bg-white rounded-xl border-t-4 border-amber-500 transition duration-300 hover:shadow-xl card-shadow">
                   <div className="flex justify-between items-center mb-2">
-                    <h4 className="text-3xl font-extrabold text-blue-900">2024+</h4>
-                    <span
-                      className="text-sm font-semibold text-white bg-blue-900 rounded-full px-3 py-1"
-                    >Leadership</span
-                    >
+                    <h4 className="text-3xl font-extrabold text-blue-900">
+                      2024+
+                    </h4>
+                    <span className="text-sm font-semibold text-white bg-blue-900 rounded-full px-3 py-1">
+                      Leadership
+                    </span>
                   </div>
                   <p className="text-gray-700 font-medium border-t pt-3">
                     ตอกย้ำความเป็นผู้นำด้านซัพพลายเออร์ ด้วยการเป็นคู่ค้าหลักกับ
-                    **สุกี้ตี๋น้อย** ครอบคลุมการจัดส่งสินค้าถึง 92 สาขาทั่วประเทศ.
+                    **สุกี้ตี๋น้อย** ครอบคลุมการจัดส่งสินค้าถึง 92
+                    สาขาทั่วประเทศ.
                   </p>
                 </div>
               </div>
@@ -292,9 +275,9 @@ export default function Home() {
         <section id="products" className="bg-white py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="text-base font-semibold text-amber-600 uppercase"
-                >สินค้าหลากหลาย ครบ จบที่เดียว</span
-              >
+              <span className="text-base font-semibold text-amber-600 uppercase">
+                สินค้าหลากหลาย ครบ จบที่เดียว
+              </span>
               <h2 className="text-4xl font-extrabold text-blue-900 mt-2">
                 ผลิตภัณฑ์ของ น็อคสโตร์
               </h2>
@@ -307,15 +290,16 @@ export default function Home() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Product Category 1: Cleaning Agents */}
-              <div
-                className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
-              >
+              <div className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center">
                 <div className="product-image-container">
-                  <img
-                    src="/pages/client_01_01.png"
-                    alt="น้ำยาทำความสะอาดต่างๆ"
-                    className="product-image"
-                  />
+                  <div className="h-full w-full bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                    <div className="text-center">
+                      <svg className="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      <p className="text-xs text-gray-500">ภาพผลิตภัณฑ์</p>
+                    </div>
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-2">
                   น้ำยาทำความสะอาดต่างๆ
@@ -327,15 +311,16 @@ export default function Home() {
               </div>
 
               {/* Product Category 2: Paper Products */}
-              <div
-                className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
-              >
+              <div className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center">
                 <div className="product-image-container">
-                  <img
-                    src="/pages/client_01_02.png"
-                    alt="กระดาษประเภทต่างๆ"
-                    className="product-image"
-                  />
+                  <div className="h-full w-full bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                    <div className="text-center">
+                      <svg className="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      <p className="text-xs text-gray-500">ภาพผลิตภัณฑ์</p>
+                    </div>
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-2">
                   กระดาษประเภทต่างๆ
@@ -346,34 +331,37 @@ export default function Home() {
               </div>
 
               {/* Product Category 3: Bags */}
-              <div
-                className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
-              >
+              <div className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center">
                 <div className="product-image-container">
-                  <img
-                    src="/pages/client_01_03.png"
-                    alt="ถุงประเภทต่างๆ"
-                    className="product-image"
-                  />
+                  <div className="h-full w-full bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                    <div className="text-center">
+                      <svg className="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      <p className="text-xs text-gray-500">ภาพผลิตภัณฑ์</p>
+                    </div>
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-2">
                   ถุงประเภทต่างๆ
                 </h3>
                 <p className="text-gray-600">
-                  ถุงร้อน, ถุงเย็น, ถุงหูหิ้ว, ถุงขยะ, ถุงพิมพ์โลโก้ และถุงอื่นๆ.
+                  ถุงร้อน, ถุงเย็น, ถุงหูหิ้ว, ถุงขยะ, ถุงพิมพ์โลโก้
+                  และถุงอื่นๆ.
                 </p>
               </div>
 
               {/* Product Category 4: Food Packaging */}
-              <div
-                className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
-              >
+              <div className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center">
                 <div className="product-image-container">
-                  <img
-                    src="/pages/client_01_04.png"
-                    alt="บรรจุภัณฑ์ใส่อาหาร"
-                    className="product-image"
-                  />
+                  <div className="h-full w-full bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                    <div className="text-center">
+                      <svg className="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      <p className="text-xs text-gray-500">ภาพผลิตภัณฑ์</p>
+                    </div>
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-2">
                   บรรจุภัณฑ์ใส่อาหาร
@@ -385,15 +373,16 @@ export default function Home() {
               </div>
 
               {/* Product Category 5: Cleaning Tools */}
-              <div
-                className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
-              >
+              <div className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center">
                 <div className="product-image-container">
-                  <img
-                    src="/pages/client_01_05.png"
-                    alt="อุปกรณ์ทำความสะอาด"
-                    className="product-image"
-                  />
+                  <div className="h-full w-full bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                    <div className="text-center">
+                      <svg className="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      <p className="text-xs text-gray-500">ภาพผลิตภัณฑ์</p>
+                    </div>
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-2">
                   อุปกรณ์ทำความสะอาด
@@ -405,15 +394,16 @@ export default function Home() {
               </div>
 
               {/* Product Category 6: Food Film */}
-              <div
-                className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
-              >
+              <div className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center">
                 <div className="product-image-container">
-                  <img
-                    src="/pages/client_01_06.png"
-                    alt="ฟิลม์ห่ออาหาร"
-                    className="product-image"
-                  />
+                  <div className="h-full w-full bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                    <div className="text-center">
+                      <svg className="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      <p className="text-xs text-gray-500">ภาพผลิตภัณฑ์</p>
+                    </div>
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-2">
                   ฟิลม์ห่ออาหาร
@@ -431,12 +421,15 @@ export default function Home() {
         </section>
 
         {/* Services & Strengths Section */}
-        <section id="services" className="py-16 md:py-24 bg-knock-blue text-white">
+        <section
+          id="services"
+          className="py-16 md:py-24 bg-knock-blue text-white"
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="text-base font-semibold text-knock-gold uppercase"
-                >OUR SERVICE & STRENGTHS</span
-              >
+              <span className="text-base font-semibold text-knock-gold uppercase">
+                OUR SERVICE & STRENGTHS
+              </span>
               <h2 className="text-4xl font-extrabold mt-2">
                 บริการหลัก และ ข้อดีของน็อคสโตร์
               </h2>
@@ -444,12 +437,8 @@ export default function Home() {
 
             {/* Services Overview Block (Service Card Focus) */}
             <div className="grid md:grid-cols-2 gap-8 mb-16">
-              <div
-                className="p-6 bg-white/10 rounded-xl border border-knock-gold/50 hover:bg-white/20 transition duration-300"
-              >
-                <h3
-                  className="text-2xl font-bold text-knock-gold mb-2 flex items-center"
-                >
+              <div className="p-6 bg-white/10 rounded-xl border border-knock-gold/50 hover:bg-white/20 transition duration-300">
+                <h3 className="text-2xl font-bold text-knock-gold mb-2 flex items-center">
                   <svg
                     className="w-6 h-6 mr-2"
                     fill="none"
@@ -472,12 +461,8 @@ export default function Home() {
                   เพื่อให้ครบวงจรแก่ลูกค้า
                 </p>
               </div>
-              <div
-                className="p-6 bg-white/10 rounded-xl border border-knock-gold/50 hover:bg-white/20 transition duration-300"
-              >
-                <h3
-                  className="text-2xl font-bold text-knock-gold mb-2 flex items-center"
-                >
+              <div className="p-6 bg-white/10 rounded-xl border border-knock-gold/50 hover:bg-white/20 transition duration-300">
+                <h3 className="text-2xl font-bold text-knock-gold mb-2 flex items-center">
                   <svg
                     className="w-6 h-6 mr-2"
                     fill="none"
@@ -504,9 +489,7 @@ export default function Home() {
             {/* Strengths Grid (Enhanced Layout) */}
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
               {/* Strength 1: Logistics (Focus Card) */}
-              <div
-                className="col-span-full md:col-span-1 lg:col-span-2 p-8 bg-knock-gold text-knock-blue rounded-2xl card-shadow transition duration-300 hover:scale-[1.03] transform"
-              >
+              <div className="col-span-full md:col-span-1 lg:col-span-2 p-8 bg-knock-gold text-knock-blue rounded-2xl card-shadow transition duration-300 hover:scale-[1.03] transform">
                 <h3 className="text-3xl font-extrabold mb-3 flex items-center">
                   <span className="text-5xl font-extrabold mr-3">01</span>
                   ขนส่งรวดเร็ว
@@ -518,10 +501,10 @@ export default function Home() {
               </div>
 
               {/* Strength 2: Variety */}
-              <div
-                className="lg:col-span-1 p-6 bg-white text-knock-blue rounded-xl card-shadow flex flex-col space-y-2 border-b-4 border-knock-gold"
-              >
-                <span className="text-4xl font-extrabold text-knock-gold">02</span>
+              <div className="lg:col-span-1 p-6 bg-white text-knock-blue rounded-xl card-shadow flex flex-col space-y-2 border-b-4 border-knock-gold">
+                <span className="text-4xl font-extrabold text-knock-gold">
+                  02
+                </span>
                 <h3 className="text-xl font-bold">สินค้าหลากหลาย</h3>
                 <p className="text-gray-700 text-sm">
                   300+ รายการ 20 ประเภทสินค้า (One Stop Service)
@@ -529,10 +512,10 @@ export default function Home() {
               </div>
 
               {/* Strength 3: Cost Saving (Delivery) */}
-              <div
-                className="lg:col-span-1 p-6 bg-white text-knock-blue rounded-xl card-shadow flex flex-col space-y-2 border-b-4 border-knock-gold"
-              >
-                <span className="text-4xl font-extrabold text-knock-gold">03</span>
+              <div className="lg:col-span-1 p-6 bg-white text-knock-blue rounded-xl card-shadow flex flex-col space-y-2 border-b-4 border-knock-gold">
+                <span className="text-4xl font-extrabold text-knock-gold">
+                  03
+                </span>
                 <h3 className="text-xl font-bold">ประหยัดค่าจัดส่ง</h3>
                 <p className="text-gray-700 text-sm">
                   ลดต้นทุนกว่า 8% ไม่ต้องเสียค่าใช้จ่ายในการรับ/กระจายสินค้าเอง
@@ -540,10 +523,10 @@ export default function Home() {
               </div>
 
               {/* Strength 4: Better Price */}
-              <div
-                className="lg:col-span-1 p-6 bg-white text-knock-blue rounded-xl card-shadow flex flex-col space-y-2 border-b-4 border-knock-gold"
-              >
-                <span className="text-4xl font-extrabold text-knock-gold">04</span>
+              <div className="lg:col-span-1 p-6 bg-white text-knock-blue rounded-xl card-shadow flex flex-col space-y-2 border-b-4 border-knock-gold">
+                <span className="text-4xl font-extrabold text-knock-gold">
+                  04
+                </span>
                 <h3 className="text-xl font-bold">ราคาสุดคุ้ม</h3>
                 <p className="text-gray-700 text-sm">
                   สั่งซื้อตรงจากโรงงานในปริมาณมาก ทำให้ได้ราคาที่ดีกว่ามาก
@@ -551,15 +534,14 @@ export default function Home() {
               </div>
 
               {/* Strength 5: Stock Management */}
-              <div
-                className="col-span-full md:col-span-2 lg:col-span-5 p-6 bg-white text-knock-blue rounded-xl card-shadow flex items-center space-x-6 border-l-4 border-knock-blue/50"
-              >
-                <span
-                  className="text-4xl font-extrabold text-knock-gold flex-shrink-0"
-                >05</span
-                >
+              <div className="col-span-full md:col-span-2 lg:col-span-5 p-6 bg-white text-knock-blue rounded-xl card-shadow flex items-center space-x-6 border-l-4 border-knock-blue/50">
+                <span className="text-4xl font-extrabold text-knock-gold flex-shrink-0">
+                  05
+                </span>
                 <div>
-                  <h3 className="text-2xl font-bold mb-1">ไม่ต้องสต๊อกสินค้าเยอะ</h3>
+                  <h3 className="text-2xl font-bold mb-1">
+                    ไม่ต้องสต๊อกสินค้าเยอะ
+                  </h3>
                   <p className="text-gray-700">
                     ด้วยความรวดเร็วในการส่งสินค้าของเรา
                     ลูกค้าจึงไม่ต้องสต๊อกสินค้าปริมาณมาก
@@ -571,16 +553,14 @@ export default function Home() {
             </div>
 
             {/* Logistics Coverage Map (Placeholder) */}
-            <div
-              className="mt-20 p-8 border-2 border-dashed border-knock-gold rounded-xl bg-knock-blue/10 text-center text-xl text-gray-100"
-            >
+            <div className="mt-20 p-8 border-2 border-dashed border-knock-gold rounded-xl bg-knock-blue/10 text-center text-xl text-gray-100">
               <p className="font-bold text-3xl mb-3 text-knock-gold">
                 ครอบคลุมหัวเมืองหลักทั่วประเทศ
               </p>
               <p className="text-gray-200 text-base md:text-lg">
                 กรุงเทพฯ และปริมณฑล, ชลบุรีและพัทยา, นครราชสีมา, บุรีรัมย์,
-                ขอนแก่น, พิษณุโลก, เชียงใหม่, นครสวรรค์, ราชบุรี, ประจวบคีรีขันธ์,
-                ชุมพร
+                ขอนแก่น, พิษณุโลก, เชียงใหม่, นครสวรรค์, ราชบุรี,
+                ประจวบคีรีขันธ์, ชุมพร
               </p>
             </div>
           </div>
@@ -588,9 +568,7 @@ export default function Home() {
 
         {/* Contact Section */}
         <section id="contact" className="py-16 md:py-24 bg-white">
-          <div
-            className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 p-8 rounded-2xl card-shadow"
-          >
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 p-8 rounded-2xl card-shadow">
             <div className="text-center mb-10">
               <h2 className="text-4xl font-extrabold text-knock-blue mb-3">
                 ติดต่อเรา
@@ -602,9 +580,7 @@ export default function Home() {
 
             <div className="space-y-6">
               {/* Head Office Info */}
-              <div
-                className="flex items-start space-x-4 p-4 border-l-4 border-knock-gold bg-gray-50 rounded-lg"
-              >
+              <div className="flex items-start space-x-4 p-4 border-l-4 border-knock-gold bg-gray-50 rounded-lg">
                 <svg
                   className="w-6 h-6 text-knock-blue flex-shrink-0 mt-1"
                   fill="none"
@@ -636,9 +612,7 @@ export default function Home() {
               </div>
 
               {/* Phone Info */}
-              <div
-                className="flex items-start space-x-4 p-4 border-l-4 border-knock-gold bg-gray-50 rounded-lg"
-              >
+              <div className="flex items-start space-x-4 p-4 border-l-4 border-knock-gold bg-gray-50 rounded-lg">
                 <svg
                   className="w-6 h-6 text-knock-blue flex-shrink-0 mt-1"
                   fill="none"
@@ -658,7 +632,9 @@ export default function Home() {
                   <a
                     href="tel:0892013316"
                     className="text-xl font-bold text-knock-gold hover:underline"
-                  >089-2013316</a>
+                  >
+                    089-2013316
+                  </a>
                 </div>
               </div>
             </div>
@@ -672,12 +648,11 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-knock-blue py-8">
-        <div
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-300"
-        >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-300">
           <p>&copy; 2024 Knock Store Co., Ltd. All rights reserved.</p>
         </div>
       </footer>
     </>
   );
 }
+
