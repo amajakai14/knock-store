@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KNOCK STORE CO., LTD. - คู่ค้าที่ขาดไม่ได้ของทุกร้านอาหาร</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+Thai:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --knock-blue: #1e3a8a; /* Dark Blue from the profile */
+        --knock-gold: #f59e0b; /* Tailwind Amber/Gold for accent */
+      }
+      body {
+        font-family: "Noto Sans Thai", "Inter", sans-serif;
+        background-color: #f7f7f7;
+        scroll-behavior: smooth;
+      }
+      .text-knock-blue {
+        color: var(--knock-blue);
+      }
+      .bg-knock-blue {
+        background-color: var(--knock-blue);
+      }
+      .bg-knock-gold {
+        background-color: var(--knock-gold);
+      }
+      .border-knock-gold {
+        border-color: var(--knock-gold);
+      }
+
+      /* Primary Button Style - Now used for "ดูผลิตภัณฑ์ทั้งหมด" */
+      .btn-primary-hero {
+        @apply inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full shadow-xl transition duration-300 ease-in-out transform hover:scale-[1.05] hover:shadow-2xl border-2 border-knock-gold;
+        background-color: var(--knock-gold);
+        color: var(--knock-blue);
+      }
+
+      /* Secondary Button Style - Now used for "ระบบขนส่งของเรา" */
+      .btn-secondary-hero {
+        @apply inline-flex items-center justify-center px-8 py-4 border-2 border-knock-gold text-lg font-bold rounded-full text-knock-gold hover:bg-knock-gold hover:text-knock-blue transition duration-300 shadow-md transform hover:scale-[1.03];
+      }
+
+      /* General Primary Button (for other sections if needed) */
+      .btn-primary {
+        @apply inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-[1.03];
+        background-color: var(--knock-gold);
+        color: var(--knock-blue);
+      }
+
+      .card-shadow {
+        /* Softer shadow */
+        box-shadow:
+          0 8px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -4px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Modern Diagonal Background for Hero */
+      .diagonal-bg {
+        background: linear-gradient(
+          135deg,
+          var(--knock-blue) 0%,
+          #3b82f6 100%
+        ); /* Blue gradient for depth */
+        position: relative;
+        z-index: 1;
+      }
+      .diagonal-bg::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #f7f7f7;
+        /* Smoother, more elegant cut */
+        transform: skewY(-2deg);
+        transform-origin: bottom left;
+        z-index: 10;
+      }
+
+      /* Modern Quote Style */
+      .quote-style {
+        position: relative;
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s ease;
+      }
+      .quote-style:hover {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+      .quote-style::before {
+        content: "“";
+        font-family: "Noto Sans Thai", sans-serif;
+        position: absolute;
+        top: 0.5rem;
+        left: 1rem;
+        font-size: 8rem;
+        line-height: 1;
+        color: rgba(245, 158, 11, 0.15); /* Slightly darker transparent gold */
+        z-index: 0;
+        pointer-events: none;
+      }
+      .z-20-content {
+        z-index: 20;
+        position: relative;
+      }
+
+      /* Mission/Vision Card Hover Effect */
+      .about-card:hover {
+        border-left-width: 8px;
+      }
+
+      /* Product Image Style */
+      .product-card {
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s ease;
+      }
+      .product-card:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        transform: translateY(-5px);
+      }
+      .product-image-container {
+        height: 120px; /* Fixed height for image consistency */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      .product-image {
+        max-height: 100%;
+        width: auto;
+        object-fit: contain;
+        border-radius: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="#" class="flex items-center space-x-2">
+            <span
+              class="text-3xl font-extrabold text-knock-blue tracking-tighter"
+              >KNOCK</span
+            >
+            <span class="text-sm font-light text-gray-500 hidden sm:block"
+              >Store Co., Ltd</span
+            >
+          </a>
+          <div class="space-x-4">
+            <a
+              href="#about"
+              class="text-gray-600 hover:text-knock-blue font-medium transition duration-150 ease-in-out hidden sm:inline-block"
+              >เกี่ยวกับเรา</a
+            >
+            <a
+              href="#products"
+              class="text-gray-600 hover:text-knock-blue font-medium transition duration-150 ease-in-out hidden sm:inline-block"
+              >ผลิตภัณฑ์</a
+            >
+            <a
+              href="#services"
+              class="text-gray-600 hover:text-knock-blue font-medium transition duration-150 ease-in-out hidden sm:inline-block"
+              >บริการ</a
+            >
+            <a href="#contact" class="btn-primary py-2 px-4 text-sm"
+              >ติดต่อเรา</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section (Updated Layout and Design) -->
+      <section
+        id="hero"
+        class="diagonal-bg pt-20 pb-40 text-white overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20-content">
+          <div
+            class="grid md:grid-cols-2 gap-10 items-center text-center md:text-left"
+          >
+            <!-- Left Column: Text and CTA -->
+            <div>
+              <span
+                class="inline-block px-4 py-1 text-sm font-bold uppercase tracking-wider bg-knock-gold rounded-full text-knock-blue mb-4 shadow-lg"
+              >
+                The Essential F&B Supplier
+              </span>
+              <h1
+                class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-tight"
+              >
+                คู่ค้าที่ขาดไม่ได้
+                <span class="block text-knock-gold mt-2"
+                  >ของทุกร้านอาหารทั่วประเทศ</span
+                >
+              </h1>
+              <p
+                class="mt-4 max-w-lg mx-auto md:mx-0 text-xl text-gray-100 font-light"
+              >
+                เราเชี่ยวชาญในการจัดจำหน่ายของใช้สิ้นเปลืองและโซลูชั่นโลจิสติกส์
+                เพื่อช่วยให้ธุรกิจร้านอาหารของคุณเติบโตได้อย่างมั่นคง
+              </p>
+              <div
+                class="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start"
+              >
+                <!-- Button "ดูผลิตภัณฑ์ทั้งหมด" - NEW DESIGN --><a
+                  href="#products"
+                  class="btn-primary-hero"
+                >
+                  ดูผลิตภัณฑ์ทั้งหมด
+                </a>
+                <!-- Button "ระบบขนส่งของเรา" - NEW DESIGN --><a
+                  href="#services"
+                  class="btn-secondary-hero"
+                >
+                  ระบบขนส่งของเรา
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Visual Element Placeholder -->
+            <div class="hidden md:block">
+              <div
+                class="bg-white/10 p-6 rounded-3xl shadow-2xl backdrop-blur-sm transform rotate-3 scale-95 transition-transform duration-500"
+              >
+                <p class="text-xl font-bold text-knock-gold mb-2">
+                  KNOCK STORE SUPPLY CHAIN
+                </p>
+                <div
+                  class="h-64 flex items-center justify-center text-lg text-gray-200 border-2 border-dashed border-gray-400 rounded-xl"
+                >
+                  โมเดล 3D/ภาพประกอบแสดง อาคาร, รถขนส่ง, และกล่องสินค้า
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- New Section: CEO Quote (Fixed Overlap) -->
+      <section id="ceo-quote" class="py-12 md:py-16 bg-f7f7f7">
+        <div
+          class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 md:-mt-16 z-20"
+        >
+          <div class="p-8 md:p-10 rounded-3xl quote-style card-shadow">
+            <p
+              class="text-xl sm:text-2xl italic text-knock-blue font-medium leading-relaxed z-20-content"
+            >
+              "เราไม่ได้ส่งแค่ของใช้ แต่ เราส่งมอบ **ความมั่นใจ ความสะดวก
+              และความคุ้มค่า** ให้กับทุกร้านอาหารที่เลือกน็อคสโตร์ เป็นคู่ค้า
+              เพราะเราเติบโตไปพร้อมกับคุณ"
+            </p>
+            <div class="mt-6 pt-4 border-t border-gray-100 z-20-content">
+              <p class="text-right text-lg font-bold text-gray-800">
+                วรวิทย์ วิวัฒนารรรม
+              </p>
+              <p class="text-right text-xs text-knock-gold font-semibold">
+                Voravit wiwatthanatham | ประธานกรรมการ
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission & Vission / Company History (Updated Cards) -->
+      <section id="about" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-knock-blue mb-3">
+              เกี่ยวกับบริษัท (ABOUT COMPANY)
+            </h2>
+            <p class="text-xl text-gray-500 max-w-3xl mx-auto">
+              บริษัท น็อคสโตร์ จํากัด ก่อตั้งขึ้นในปี **2560 (2017)**
+              โดยเล็งเห็นถึงโอกาสทางธุรกิจร้านอาหาร
+              และปัญหาในการจัดการสต๊อกและขนส่งสินค้าประเภทของใช้สิ้นเปลือง
+            </p>
+          </div>
+
+          <!-- Mission & Vision Cards (Modern Numbered Style) -->
+          <div class="grid md:grid-cols-2 gap-8">
+            <div
+              class="p-8 bg-white rounded-xl card-shadow border-l-4 border-knock-gold about-card transition duration-300 hover:shadow-xl hover:translate-y-[-2px]"
+            >
+              <span class="text-5xl font-extrabold text-knock-gold block mb-3"
+                >01</span
+              >
+              <h3
+                class="text-2xl font-bold text-knock-blue mb-3 flex items-center"
+              >
+                <svg
+                  class="w-6 h-6 mr-2 text-knock-gold"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                MISSION: เป้าหมายหลัก
+              </h3>
+              <p class="text-gray-700 text-lg">
+                น็อคสโตร์
+                หวังเป็นพลังขับเคลื่อนหลักเบื้องหลังความสำเร็จของทุกร้านอาหารทั่วประเทศ
+                เรามุ่งหวังเพื่อสร้างมาตรฐานใหม่ของบริการซัพพลายเออร์ที่เหนือกว่าสำหรับธุรกิจอาหาร
+              </p>
+            </div>
+            <div
+              class="p-8 bg-white rounded-xl card-shadow border-l-4 border-knock-blue about-card transition duration-300 hover:shadow-xl hover:translate-y-[-2px]"
+            >
+              <span class="text-5xl font-extrabold text-knock-blue block mb-3"
+                >02</span
+              >
+              <h3
+                class="text-2xl font-bold text-knock-blue mb-3 flex items-center"
+              >
+                <svg
+                  class="w-6 h-6 mr-2 text-knock-blue"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 19V6l12-3v14m-9 0V9l12 3"
+                  ></path>
+                </svg>
+                VISION: มุมมองธุรกิจ
+              </h3>
+              <p class="text-gray-700 text-lg">
+                ด้วยความหลากหลายของสินค้าและการขนส่งที่รวดเร็วและถูกต้อง
+                ทำให้เราช่วยลดต้นทุนและประหยัดเวลาในการดูแลสินค้า
+                โดยเน้นสร้างคุณค่าของสินค้าและบริการเพื่อความพึงพอใจของลูกค้าเป็นภารกิจหลัก.
+              </p>
+            </div>
+          </div>
+
+          <!-- History Highlights (Timeline/Highlight Card Style) -->
+          <div class="mt-20">
+            <h3 class="text-3xl font-bold text-knock-blue text-center mb-10">
+              ประวัติผลงาน (Our Customer Highlights)
+            </h3>
+            <div class="grid lg:grid-cols-3 gap-8">
+              <!-- 2022 -->
+              <div
+                class="p-6 bg-white rounded-xl border-t-4 border-knock-gold transition duration-300 hover:shadow-xl card-shadow"
+              >
+                <div class="flex justify-between items-center mb-2">
+                  <h4 class="text-3xl font-extrabold text-knock-blue">2022</h4>
+                  <span
+                    class="text-sm font-semibold text-white bg-knock-blue rounded-full px-3 py-1"
+                    >Expansion</span
+                  >
+                </div>
+                <p class="text-gray-700 font-medium border-t pt-3">
+                  เริ่มต้นแคมเปญ **“สั่งวันนี้ได้รับของวันพรุ่งนี้”**
+                  ทั่วกรุงเทพฯ และปริมณฑล สร้างความไว้วางใจในความรวดเร็ว.
+                </p>
+              </div>
+              <!-- 2023 -->
+              <div
+                class="p-6 bg-white rounded-xl border-t-4 border-knock-gold transition duration-300 hover:shadow-xl card-shadow"
+              >
+                <div class="flex justify-between items-center mb-2">
+                  <h4 class="text-3xl font-extrabold text-knock-blue">2023</h4>
+                  <span
+                    class="text-sm font-semibold text-white bg-knock-blue rounded-full px-3 py-1"
+                    >Partnership</span
+                  >
+                </div>
+                <p class="text-gray-700 font-medium border-t pt-3">
+                  ขยายฐานลูกค้าหลักกลุ่มร้านอาหารหลายสาขา เช่น ย่างเนย,
+                  สุกี้จินดา, และเป็นคู่ค้าหลักกับ ลัคกี้สุกี้ (ครบ 31 สาขา).
+                </p>
+              </div>
+              <!-- 2024 - Present -->
+              <div
+                class="p-6 bg-white rounded-xl border-t-4 border-knock-gold transition duration-300 hover:shadow-xl card-shadow"
+              >
+                <div class="flex justify-between items-center mb-2">
+                  <h4 class="text-3xl font-extrabold text-knock-blue">2024+</h4>
+                  <span
+                    class="text-sm font-semibold text-white bg-knock-blue rounded-full px-3 py-1"
+                    >Leadership</span
+                  >
+                </div>
+                <p class="text-gray-700 font-medium border-t pt-3">
+                  ตอกย้ำความเป็นผู้นำด้านซัพพลายเออร์ ด้วยการเป็นคู่ค้าหลักกับ
+                  **สุกี้ตี๋น้อย** ครอบคลุมการจัดส่งสินค้าถึง 92 สาขาทั่วประเทศ.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products Section (Updated with Real Images) -->
+      <section id="products" class="bg-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <span class="text-base font-semibold text-knock-gold uppercase"
+              >สินค้าหลากหลาย ครบ จบที่เดียว</span
+            >
+            <h2 class="text-4xl font-extrabold text-knock-blue mt-2">
+              ผลิตภัณฑ์ของ น็อคสโตร์
+            </h2>
+            <p class="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
+              เนื่องจากเราเน้นจำหน่ายสินค้าไปที่กลุ่มร้านอาหารเป็นหลัก
+              ทำให้เรามีสินค้าสิ้นเปลืองหลากหลายชนิดครบทุกประเภท (มากกว่า 300
+              รายการ)
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product Category 1: Cleaning Agents (Image: image_7d4281.png) -->
+            <div
+              class="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
+            >
+              <div class="product-image-container">
+                <img
+                  src="uploaded:image_7d4281.png-1ba6fe24-53fb-4b55-bf2d-93a3d3691043"
+                  alt="น้ำยาทำความสะอาดต่างๆ"
+                  class="product-image"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-knock-blue mb-2">
+                น้ำยาทำความสะอาดต่างๆ
+              </h3>
+              <p class="text-gray-600">
+                น้ำยาล้างจาน, ถูพื้น, ล้างห้องน้ำ, เช็ดกระจก, สบู่ล้างมือ
+                และน้ำยาอื่นๆ.
+              </p>
+            </div>
+
+            <!-- Product Category 2: Paper Products (Image: image_7d4286.png) -->
+            <div
+              class="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
+            >
+              <div class="product-image-container">
+                <img
+                  src="uploaded:image_7d4286.png-161f8452-1411-4203-b7a2-770485cf99c8"
+                  alt="กระดาษประเภทต่างๆ"
+                  class="product-image"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-knock-blue mb-2">
+                กระดาษประเภทต่างๆ
+              </h3>
+              <p class="text-gray-600">
+                กระดาษป๊อปอัพ, กระดาษเช็ดมือ, กระดาษชำระ และกระดาษอื่นๆ.
+              </p>
+            </div>
+
+            <!-- Product Category 3: Bags (Image: image_7d42a5.png) -->
+            <div
+              class="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
+            >
+              <div class="product-image-container">
+                <img
+                  src="uploaded:image_7d42a5.png-c2e22244-3d63-44a3-980a-e563d65dab99"
+                  alt="ถุงประเภทต่างๆ"
+                  class="product-image"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-knock-blue mb-2">
+                ถุงประเภทต่างๆ
+              </h3>
+              <p class="text-gray-600">
+                ถุงร้อน, ถุงเย็น, ถุงหูหิ้ว, ถุงขยะ, ถุงพิมพ์โลโก้ และถุงอื่นๆ.
+              </p>
+            </div>
+
+            <!-- Product Category 4: Food Packaging (Image: image_7d42dc.png) -->
+            <div
+              class="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
+            >
+              <div class="product-image-container">
+                <img
+                  src="uploaded:image_7d42dc.png-7fb6ffb3-8b7d-4f32-ab6f-9fdad3ef6632"
+                  alt="บรรจุภัณฑ์ใส่อาหาร"
+                  class="product-image"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-knock-blue mb-2">
+                บรรจุภัณฑ์ใส่อาหาร
+              </h3>
+              <p class="text-gray-600">
+                กล่องอาหารเหลี่ยม/กลม, ถ้วยน้ำจิ้ม, กล่องซูชิ, กล่องเบนโตะ
+                และอื่นๆ.
+              </p>
+            </div>
+
+            <!-- Product Category 5: Cleaning Tools (Image: image_7d42e1.png) -->
+            <div
+              class="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
+            >
+              <div class="product-image-container">
+                <img
+                  src="uploaded:image_7d42e1.png-39575eac-cc8f-46af-9ed5-6b216695208e"
+                  alt="อุปกรณ์ทำความสะอาด"
+                  class="product-image"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-knock-blue mb-2">
+                อุปกรณ์ทำความสะอาด
+              </h3>
+              <p class="text-gray-600">
+                สกอตไบรท์, ฟองน้ำติดไบรท์, ฝอยขัด, ไม้ถูพื้น, แปรงขัดพื้น
+                และอื่นๆ.
+              </p>
+            </div>
+
+            <!-- Product Category 6: Food Film (Image: image_7d42c0.png) -->
+            <div
+              class="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
+            >
+              <div class="product-image-container">
+                <img
+                  src="uploaded:image_7d42c0.png-2e19af11-6281-4e37-9c7a-03772575ce28"
+                  alt="ฟิลม์ห่ออาหาร"
+                  class="product-image"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-knock-blue mb-2">
+                ฟิลม์ห่ออาหาร
+              </h3>
+              <p class="text-gray-600">ฟิลม์ม้วนห่ออาหารทุกขนาด</p>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <a href="#contact" class="btn-primary py-3 px-6 text-lg">
+              สั่งซื้อวันนี้ พร้อมจัดส่งรวดเร็ว
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services & Strengths Section -->
+      <section id="services" class="py-16 md:py-24 bg-knock-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <span class="text-base font-semibold text-knock-gold uppercase"
+              >OUR SERVICE & STRENGTHS</span
+            >
+            <h2 class="text-4xl font-extrabold mt-2">
+              บริการหลัก และ ข้อดีของน็อคสโตร์
+            </h2>
+          </div>
+
+          <!-- Services Overview Block (Service Card Focus) -->
+          <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div
+              class="p-6 bg-white/10 rounded-xl border border-knock-gold/50 hover:bg-white/20 transition duration-300"
+            >
+              <h3
+                class="text-2xl font-bold text-knock-gold mb-2 flex items-center"
+              >
+                <svg
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.04 12.04 0 002.944 12c.045 4.049 1.488 7.842 4.09 10.957L12 24l5.066-1.579c2.618-3.115 4.06-6.908 4.09-10.957l.004-.265v-2.155a.999.999 0 00-1-1.001z"
+                  ></path>
+                </svg>
+                ผลิตภัณฑ์ครบวงจร
+              </h3>
+              <p class="text-gray-200">
+                น็อคสโตร์
+                มีสินค้าประเภทของใช้สิ้นเปลืองที่ร้านอาหารใช้ครบทุกประเภท
+                เพื่อให้ครบวงจรแก่ลูกค้า
+              </p>
+            </div>
+            <div
+              class="p-6 bg-white/10 rounded-xl border border-knock-gold/50 hover:bg-white/20 transition duration-300"
+            >
+              <h3
+                class="text-2xl font-bold text-knock-gold mb-2 flex items-center"
+              >
+                <svg
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7a2 2 0 012-2z"
+                  ></path>
+                </svg>
+                สต๊อกสินค้าพร้อมส่ง
+              </h3>
+              <p class="text-gray-200">
+                เรามีสต็อกสินค้าเพียงพอต่อความต้องการของลูกค้า
+                ทำให้คุณไม่ต้องกังวลเรื่องของขาดมือและสั่งของได้ตามต้องการ
+              </p>
+            </div>
+          </div>
+
+          <!-- Strengths Grid (Enhanced Layout) -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <!-- Strength 1: Logistics (Focus Card) -->
+            <div
+              class="col-span-full md:col-span-1 lg:col-span-2 p-8 bg-knock-gold text-knock-blue rounded-2xl card-shadow transition duration-300 hover:scale-[1.03] transform"
+            >
+              <h3 class="text-3xl font-extrabold mb-3 flex items-center">
+                <span class="text-5xl font-extrabold mr-3">01</span>
+                ขนส่งรวดเร็ว
+              </h3>
+              <p class="text-xl font-medium">
+                ส่งถึงมือลูกค้า **ภายในวัน** (สั่งออเดอร์ก่อน 9.00) หรือ
+                **ไม่เกิน 24 ชม.** ด้วยระบบจัดการที่พร้อมที่สุด
+              </p>
+            </div>
+
+            <!-- Strength 2: Variety -->
+            <div
+              class="lg:col-span-1 p-6 bg-white text-knock-blue rounded-xl card-shadow flex flex-col space-y-2 border-b-4 border-knock-gold"
+            >
+              <span class="text-4xl font-extrabold text-knock-gold">02</span>
+              <h3 class="text-xl font-bold">สินค้าหลากหลาย</h3>
+              <p class="text-gray-700 text-sm">
+                300+ รายการ 20 ประเภทสินค้า (One Stop Service)
+              </p>
+            </div>
+
+            <!-- Strength 3: Cost Saving (Delivery) -->
+            <div
+              class="lg:col-span-1 p-6 bg-white text-knock-blue rounded-xl card-shadow flex flex-col space-y-2 border-b-4 border-knock-gold"
+            >
+              <span class="text-4xl font-extrabold text-knock-gold">03</span>
+              <h3 class="text-xl font-bold">ประหยัดค่าจัดส่ง</h3>
+              <p class="text-gray-700 text-sm">
+                ลดต้นทุนกว่า 8% ไม่ต้องเสียค่าใช้จ่ายในการรับ/กระจายสินค้าเอง
+              </p>
+            </div>
+
+            <!-- Strength 4: Better Price -->
+            <div
+              class="lg:col-span-1 p-6 bg-white text-knock-blue rounded-xl card-shadow flex flex-col space-y-2 border-b-4 border-knock-gold"
+            >
+              <span class="text-4xl font-extrabold text-knock-gold">04</span>
+              <h3 class="text-xl font-bold">ราคาสุดคุ้ม</h3>
+              <p class="text-gray-700 text-sm">
+                สั่งซื้อตรงจากโรงงานในปริมาณมาก ทำให้ได้ราคาที่ดีกว่ามาก
+              </p>
+            </div>
+
+            <!-- Strength 5: Stock Management -->
+            <div
+              class="col-span-full md:col-span-2 lg:col-span-5 p-6 bg-white text-knock-blue rounded-xl card-shadow flex items-center space-x-6 border-l-4 border-knock-blue/50"
+            >
+              <span
+                class="text-4xl font-extrabold text-knock-gold flex-shrink-0"
+                >05</span
+              >
+              <div>
+                <h3 class="text-2xl font-bold mb-1">ไม่ต้องสต๊อกสินค้าเยอะ</h3>
+                <p class="text-gray-700">
+                  ด้วยความรวดเร็วในการส่งสินค้าของเรา
+                  ลูกค้าจึงไม่ต้องสต๊อกสินค้าปริมาณมาก
+                  ทำให้ลดต้นทุนในการสต็อกสินค้า
+                  และประหยัดพื้นที่ในการจัดเก็บสินค้า.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Logistics Coverage Map (Placeholder) -->
+          <div
+            class="mt-20 p-8 border-2 border-dashed border-knock-gold rounded-xl bg-knock-blue/10 text-center text-xl text-gray-100"
+          >
+            <p class="font-bold text-3xl mb-3 text-knock-gold">
+              ครอบคลุมหัวเมืองหลักทั่วประเทศ
+            </p>
+            <p class="text-gray-200 text-base md:text-lg">
+              กรุงเทพฯ และปริมณฑล, ชลบุรีและพัทยา, นครราชสีมา, บุรีรัมย์,
+              ขอนแก่น, พิษณุโลก, เชียงใหม่, นครสวรรค์, ราชบุรี, ประจวบคีรีขันธ์,
+              ชุมพร
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-16 md:py-24 bg-white">
+        <div
+          class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 p-8 rounded-2xl card-shadow"
+        >
+          <div class="text-center mb-10">
+            <h2 class="text-4xl font-extrabold text-knock-blue mb-3">
+              ติดต่อเรา
+            </h2>
+            <p class="text-xl text-gray-500">
+              พร้อมให้คำปรึกษาและเป็นคู่ค้าทางธุรกิจของคุณ
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <!-- Head Office Info -->
+            <div
+              class="flex items-start space-x-4 p-4 border-l-4 border-knock-gold bg-gray-50 rounded-lg"
+            >
+              <svg
+                class="w-6 h-6 text-knock-blue flex-shrink-0 mt-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              <div>
+                <p class="font-semibold text-knock-blue">
+                  บริษัท น็อคสโตร์ จำกัด (สำนักงานใหญ่)
+                </p>
+                <p class="text-gray-700">
+                  103 หมู่ 1 ต.บางศรีเมือง อ.เมืองนนทบุรี จ.นนทบุรี 11000
+                </p>
+              </div>
+            </div>
+
+            <!-- Phone Info -->
+            <div
+              class="flex items-start space-x-4 p-4 border-l-4 border-knock-gold bg-gray-50 rounded-lg"
+            >
+              <svg
+                class="w-6 h-6 text-knock-blue flex-shrink-0 mt-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path>
+              </svg>
+              <div>
+                <p class="font-semibold text-knock-blue">โทรศัพท์</p>
+                <a
+                  href="tel:0892013316"
+                  class="text-xl font-bold text-knock-gold hover:underline"
+                  >089-2013316</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <p class="text-gray-600">Knock Store Co., Ltd</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-knock-blue py-8">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-300"
+      >
+        <p>&copy; 2024 Knock Store Co., Ltd. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

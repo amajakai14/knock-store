@@ -1,598 +1,682 @@
-import { useState } from "react";
-
-const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const sections = [
-    { id: "about", name: "About" },
-    { id: "mission", name: "Mission" },
-    { id: "history", name: "History" },
-    { id: "products", name: "Products" },
-    { id: "services", name: "Services" },
-    { id: "strengths", name: "Strengths" },
-    { id: "contact", name: "Contact" },
-  ];
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
-  };
-
-  return (
-    <header
-      className="sticky top-0 z-50 backdrop-blur-sm border-b border-white/10"
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(46,49,146,0.95), rgba(46,49,146,0.85))",
-      }}
-    >
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-3">
-            <div
-              className="w-7 h-7 rounded-lg flex items-center justify-center font-bold text-black text-lg shadow-lg"
-              style={{
-                background: "linear-gradient(135deg, #F7931E, #FFA947)",
-              }}
-            >
-              K
-            </div>
-            <span className="font-bold text-xl text-white uppercase tracking-wide">
-              Knock Store
-            </span>
-          </div>
-          <nav className="hidden md:flex space-x-6">
-            {sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => scrollToSection(section.id)}
-                className="text-gray-300 hover:text-white transition-all duration-200 font-medium cursor-pointer"
-              >
-                {section.name}
-              </button>
-            ))}
-          </nav>
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-300 hover:text-white transition-all duration-200 cursor-pointer"
-            >
-              {isMobileMenuOpen ? (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
-        {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 border-t border-white/10">
-            {sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => scrollToSection(section.id)}
-                className="block w-full text-left py-2 text-gray-300 hover:text-white transition-all duration-200"
-              >
-                {section.name}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-    </header>
-  );
-};
-
-const Hero = () => {
-  return (
-    <section
-      className="py-20 px-4"
-      style={{
-        background:
-          "radial-gradient(600px 300px at 90% -10%, rgba(247,147,30,0.12), transparent 60%)",
-      }}
-    >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
-          <div>
-            <span className="inline-block text-sm font-semibold text-orange-200 bg-orange-900/30 border border-orange-600/30 px-3 py-1 rounded-full mb-4">
-              One‑Stop Service • บริการครบวงจร
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              ของใช้สิ้นเปลืองสำหรับร้านอาหาร <br />
-              พร้อมจัดส่งรวดเร็ว ครบถ้วน
-            </h1>
-            <p className="text-gray-300 text-lg mb-6 max-w-2xl">
-              เราไม่ได้ส่งแค่ของใช้ — เราส่งมอบความมั่นใจ ความสะดวก
-              และความคุ้มค่าให้กับทุกร้านอาหารที่เลือกน็อคสโตร์เป็นคู่ค้า
-              "สั่งวันนี้ ได้พรุ่งนี้" ครอบคลุมกรุงเทพฯ ปริมณฑล และหัวเมืองหลัก
-            </p>
-            <div className="flex flex-wrap gap-3 mb-8">
-              <button
-                onClick={() =>
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="px-6 py-3 rounded-lg font-semibold text-black shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
-                style={{
-                  background: "linear-gradient(135deg, #F7931E, #FFA947)",
-                }}
-              >
-                ขอใบเสนอราคา
-              </button>
-              <button
-                onClick={() =>
-                  document
-                    .getElementById("products")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="px-6 py-3 rounded-lg font-semibold text-white border border-white/20 bg-white/10 hover:bg-white/20 transition-all duration-200"
-              >
-                ดูรายการสินค้า
-              </button>
-            </div>
-            <div className="grid grid-cols-3 gap-4 mb-4">
-              <div className="text-center p-4 rounded-lg border border-dashed border-white/20">
-                <div className="text-2xl font-bold text-white">300+</div>
-                <div className="text-sm text-gray-400">รายการสินค้า</div>
-              </div>
-              <div className="text-center p-4 rounded-lg border border-dashed border-white/20">
-                <div className="text-2xl font-bold text-white">20</div>
-                <div className="text-sm text-gray-400">ประเภทหลัก</div>
-              </div>
-              <div className="text-center p-4 rounded-lg border border-dashed border-white/20">
-                <div className="text-2xl font-bold text-white">≤ 24 ชม.</div>
-                <div className="text-sm text-gray-400">จัดส่งรวดเร็ว*</div>
-              </div>
-            </div>
-            <p className="text-xs text-gray-500">
-              * สั่งก่อน 09:00 จัดส่งภายในวันหรือไม่เกิน 24 ชม.
-            </p>
-          </div>
-          <div>
-            <div className="p-6 rounded-xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent shadow-xl">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                คำกล่าวจากผู้บริหาร (CEO)
-              </h3>
-              <p className="text-gray-400 text-sm mb-4">
-                "เราไม่ได้ส่งแค่ของใช้ แต่ส่งมอบความมั่นใจ ความสะดวก
-                และความคุ้มค่า เพราะเราเติบโตไปพร้อมกับคุณ" —
-                <strong> วรวัทย์ วีวัฒนาธรรม</strong>
-              </p>
-              <div className="space-y-3">
-                <div className="flex gap-3">
-                  <div className="text-orange-300 font-semibold text-sm whitespace-nowrap">
-                    2018–ปัจจุบัน
-                  </div>
-                  <div className="text-gray-400 text-sm">
-                    คู่ค้าหลักของ <strong>สุกี้ตี๋น้อย</strong>{" "}
-                    ครบทุกสาขาทั่วประเทศ
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <div className="text-orange-300 font-semibold text-sm whitespace-nowrap">
-                    2022–ปัจจุบัน
-                  </div>
-                  <div className="text-gray-400 text-sm">
-                    เริ่มส่งให้ <strong>ลัคกี้สุกี้</strong>{" "}
-                    และแบรนด์แฟรนไชส์หลายสาขา
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <div className="text-orange-300 font-semibold text-sm whitespace-nowrap">
-                    2024–ปัจจุบัน
-                  </div>
-                  <div className="text-gray-400 text-sm">
-                    ขยายความครอบคลุมบริการ • "สั่งวันนี้ ได้พรุ่งนี้"
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const Section = ({
-  id,
-  kicker,
-  title,
-  children,
-}: {
-  id: string;
-  kicker: string;
-  title: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <section id={id} className="py-16 px-4">
-      <div className="max-w-6xl mx-auto">
-        <span className="inline-block text-xs font-semibold text-orange-200 bg-orange-900/30 border border-orange-600/30 px-3 py-1 rounded-full mb-4">
-          {kicker}
-        </span>
-        <h2 className="text-3xl font-bold text-white mb-12">{title}</h2>
-        {children}
-      </div>
-    </section>
-  );
-};
-
-const Card = ({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <div className="p-6 rounded-xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent shadow-lg">
-      <h3 className="text-lg font-semibold text-white mb-3">{title}</h3>
-      <p className="text-gray-400 text-sm leading-relaxed">{children}</p>
-    </div>
-  );
-};
-
-const TimelineItem = ({
-  year,
-  description,
-}: {
-  year: string;
-  description: string;
-}) => {
-  return (
-    <div className="flex gap-4 relative">
-      <div className="relative">
-        <div
-          className="w-3 h-3 rounded-full mt-2 shadow-lg"
-          style={{ background: "linear-gradient(135deg, #F7931E, #FFA947)" }}
-        ></div>
-        <div className="absolute top-5 left-1.5 w-0.5 h-full bg-white/10"></div>
-      </div>
-      <div className="flex-1 pb-8">
-        <div className="text-orange-300 font-semibold mb-1">{year}</div>
-        <div className="text-gray-400 text-sm">{description}</div>
-      </div>
-    </div>
-  );
-};
-
-const Timeline = ({ children }: { children: React.ReactNode }) => {
-  return <div className="ml-2">{children}</div>;
-};
-
-const TickItem = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="flex gap-3 items-start mb-3">
-      <div
-        className="w-5 h-5 rounded-md flex-shrink-0 shadow-lg"
-        style={{ background: "linear-gradient(135deg, #F7931E, #FFA947)" }}
-      ></div>
-      <p className="text-gray-400 text-sm">{children}</p>
-    </div>
-  );
-};
-
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="py-12 px-4 border-t border-white/10 bg-gradient-to-b from-transparent to-white/5">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-gray-400">
-            © {currentYear} Knock Store Co., Ltd.
-          </div>
-          <div className="text-gray-400 text-sm">
-            One‑Stop Supplies for Restaurants • สั่งวันนี้ ได้พรุ่งนี้
-          </div>
-        </div>
-        <div className="text-center text-xs text-gray-500 mt-6">
-          Designed from provided slide content.
-        </div>
-      </div>
-    </footer>
-  );
-};
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div
-      className="min-h-screen"
-      style={{ background: "linear-gradient(180deg, #2E3192, #1e2158)" }}
-    >
-      <Header />
-      <Hero />
+    <>
+      <Head>
+        <title>KNOCK STORE CO., LTD. - คู่ค้าที่ขาดไม่ได้ของทุกร้านอาหาร</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
 
-      <Section id="about" kicker="About Company" title="เกี่ยวกับบริษัท">
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card title="เราคือใคร">
-            บริษัท น็อคสโตร์ จำกัด
-            จัดจำหน่ายของใช้สิ้นเปลืองสำหรับร้านอาหารทุกประเภท เช่น
-            น้ำยาทำความสะอาด กระดาษ ถุง ฟิล์ม บรรจุภัณฑ์ และอุปกรณ์ทำความสะอาด
-          </Card>
-          <Card title="สิ่งที่เราให้ความสำคัญ">
-            บริการจัดส่งที่รวดเร็ว ถูกต้อง ครบถ้วนทุกออเดอร์
-            เพื่อช่วยลดต้นทุนและประหยัดเวลาลูกค้า
-          </Card>
-          <Card title="พันธกิจ">
-            เป็นคู่ค้าที่ขาดไม่ได้ของทุกร้านอาหาร
-            สร้างมาตรฐานใหม่ของผู้ให้บริการซัพพลายเออร์สำหรับธุรกิจอาหาร
-          </Card>
-        </div>
-      </Section>
-
-      <Section id="mission" kicker="Mission & Vision" title="เป้าหมายและมุมมอง">
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card title="เป้าหมาย">
-            ทำให้ทุกความต้องการของร้านอาหาร ง่ายและครบวงจรที่สุด
-            พร้อมช่วยลดต้นทุนและเวลาในการดูแลสินค้า
-          </Card>
-          <Card title="มุมมอง">
-            สร้างมาตรฐานบริการซัพพลายเออร์ที่เหนือกว่า
-            เพื่อธุรกิจอาหารในประเทศไทย
-          </Card>
-          <Card title="แคมเปญหลัก">
-            "สั่งวันนี้ ได้พรุ่งนี้"
-            ด้วยเครือข่ายและระบบการขนส่งที่มีประสิทธิภาพ
-          </Card>
-        </div>
-      </Section>
-
-      <Section
-        id="history"
-        kicker="Company History"
-        title="เส้นทางความไว้วางใจ"
-      >
-        <Timeline>
-          <TimelineItem
-            year="2018"
-            description="เริ่มจัดส่งสินค้าให้สุกี้ตี๋น้อย ตั้งแต่สาขาแรก จนปัจจุบันครบทุกสาขาทั่วประเทศ"
-          />
-          <TimelineItem
-            year="2022"
-            description="เริ่มส่งให้ลัคกี้สุกี้ ตั้งแต่สาขาแรก ปัจจุบันครบ 31 สาขาทั่วประเทศ"
-          />
-          <TimelineItem
-            year="2022–2023"
-            description="ขยายฐานลูกค้าหลายสาขา: ย่างเนย, ติดมันส์, สุกี้จินดา, เจริญรส, จ่าอูหมูกระทะ, เครืออำแดงใต้ฝุ่น, ฮอตพอตแมน"
-          />
-          <TimelineItem
-            year="2024–ปัจจุบัน"
-            description={
-              'ยกระดับโลจิสติกส์และการบริการ "สั่งวันนี้ ได้พรุ่งนี้"'
-            }
-          />
-        </Timeline>
-      </Section>
-
-      <Section id="products" kicker="Products" title="ผลิตภัณฑ์ของเรา">
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <Card title="น้ำยาทำความสะอาด">
-            ล้างจาน ถูพื้น ล้างห้องน้ำ เช็ดกระจก สบู่ล้างมือ และอื่น ๆ
-          </Card>
-          <Card title="กระดาษประเภทต่าง ๆ">
-            กระดาษป็อปอัพ กระดาษเช็ดมือ กระดาษชำระ ฯลฯ
-          </Card>
-          <Card title="ถุงประเภทต่าง ๆ">
-            ถุงร้อน ถุงเย็น ถุงหูหิ้ว ถุงขยะ ถุงพิมพ์โลโก้
-          </Card>
-          <Card title="ฟิล์ม & บรรจุภัณฑ์อาหาร">
-            ฟิล์มห่ออาหาร กล่องอาหารเหลี่ยม/กลม กล่องซูชิ กล่องเบนโตะ
-            ถ้วยน้ำจิ้ม
-          </Card>
-          <Card title="อุปกรณ์ทำความสะอาด">
-            สก๊อตไบรต์ ฟองน้ำ ฝอยขัด ไม้ถูพื้น แปรงขัดพื้น และอื่น ๆ
-          </Card>
-          <Card title="One‑Stop">
-            สินค้าครบทุกประเภทสำหรับร้านอาหาร — หลากหลาย ครบ จบที่เดียว
-          </Card>
-        </div>
-        <div className="space-y-3">
-          <TickItem>
-            สินค้ามากกว่า <strong>300 รายการ</strong> ครอบคลุม{" "}
-            <strong>20 ประเภท</strong>
-          </TickItem>
-          <TickItem>
-            ลูกค้าไม่ต้องสต็อกจริงจัง — จัดส่งรวดเร็วช่วยลดพื้นที่และต้นทุนสต็อก
-          </TickItem>
-        </div>
-      </Section>
-
-      <Section id="services" kicker="Services" title="บริการของเรา">
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <Card title="ผลิตภัณฑ์ครบวงจร">
-            มีสินค้าของใช้สิ้นเปลืองทุกรายการที่ร้านอาหารต้องใช้
-          </Card>
-          <Card title="สต็อกพร้อมส่ง">
-            สต็อกเพียงพอต่อความต้องการ รองรับการสั่งซ้ำและหลายสาขา
-          </Card>
-          <Card title="บริการขนส่ง">
-            จัดส่งครบถ้วน รวดเร็ว ถึงที่หมายตามต้องการ
-          </Card>
-        </div>
-        <Card title="ความครอบคลุมด้านโลจิสติกส์">
-          <div className="grid md:grid-cols-2 gap-3 mt-4">
-            {[
-              "กรุงเทพฯ และปริมณฑล",
-              "นครสวรรค์ • ชลบุรี • พัทยา",
-              "นครราชสีมา • บุรีรัมย์",
-              "เชียงใหม่ • พิษณุโลก • ขอนแก่น",
-              "ราชบุรี • ประจวบคีรีขันธ์ • ชุมพร",
-            ].map((location, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-2 p-3 rounded-lg border border-white/10"
-              >
-                <div
-                  className="w-2 h-2 rounded-full"
-                  style={{ backgroundColor: "#F7931E" }}
-                ></div>
-                <span className="text-gray-400 text-sm">{location}</span>
-              </div>
-            ))}
-          </div>
-        </Card>
-      </Section>
-
-      <Section
-        id="strengths"
-        kicker="Why Knock Store"
-        title="เหตุผลที่ลูกค้าเลือกเรา"
-      >
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <Card title="ระบบขนส่งรวดเร็ว">
-            จัดการขนส่งพร้อม ส่งถึงสาขาลูกค้าอย่างถูกต้อง ครบถ้วน รวดเร็ว
-            (สั่งก่อน 09:00 จัดส่งภายในวัน/ไม่เกิน 24 ชม.)
-          </Card>
-          <Card title="ลดต้นทุนโลจิสติกส์ ~8%">
-            ไม่ต้องไปรับหรือกระจายสินค้าเอง ทำให้ออเดอร์รวมมีต้นทุนที่แข่งขันได้
-          </Card>
-          <Card title="ราคาดีจากแหล่งผลิต">
-            สั่งซื้อจากโรงงานผู้ผลิตเป็นปริมาณมาก จึงเสนอราคาที่คุ้มค่า
-          </Card>
-          <Card title="หลากหลาย ครบ จบ">
-            มากกว่า 300 รายการ ครอบคลุม 20 ประเภทสินค้า
-          </Card>
-          <Card title="ไม่ต้องสต็อกเยอะ">
-            ความเร็วในการจัดส่งช่วยลดพื้นที่และต้นทุนสต็อกของลูกค้า
-          </Card>
-          <Card title="ลูกค้าหลายสาขาไว้ใจ">
-            เชี่ยวชาญการให้บริการลูกค้าที่มีหลายสาขาและต้องการความสม่ำเสมอ
-          </Card>
-        </div>
-
-        <div className="mt-8">
-          <h3 className="text-xl font-semibold text-white mb-4">
-            ลูกค้าของเรา
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {[
-              "สุกี้ตี๋น้อย",
-              "ลัคกี้สุกี้",
-              "ย่างเนย",
-              "ติดมันส์",
-              "สุกี้จินดา",
-              "เจริญรส",
-              "จ่าอูหมูกระทะ",
-              "เครืออำแดงใต้ฝุ่น",
-              "ฮอตพอตแมน",
-            ].map((customer, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 rounded-full border border-white/20 bg-white/5 text-white text-sm"
-              >
-                {customer}
-              </span>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      <Section id="contact" kicker="Contact" title="ติดต่อเรา">
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card title="สำนักงานใหญ่">
-            <div className="space-y-2">
-              <p>บริษัท น็อคสโตร์ จำกัด</p>
-              <p>103 หมู่ 1 ต.บางศรีเมือง อ.เมืองนนทบุรี จ.นนทบุรี 11000</p>
-              <p>
-                โทร:{" "}
-                <a
-                  href="tel:0892013316"
-                  className="text-orange-300 hover:text-orange-200"
-                >
-                  089-201-3316
-                </a>
-              </p>
-            </div>
-          </Card>
-
-          <Card title="ขอใบเสนอราคา">
-            <p className="mb-4">กรอกแบบฟอร์มและทีมงานจะติดต่อกลับโดยเร็ว</p>
-            <form
-              className="space-y-3"
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert("ขอบคุณที่ติดต่อเรา! ทีมงานจะติดต่อกลับโดยเร็วที่สุด");
-              }}
-            >
-              <div className="grid grid-cols-2 gap-2">
-                <input
-                  required
-                  placeholder="ชื่อ"
-                  className="px-3 py-2 rounded-lg border border-white/20 bg-white/10 text-white placeholder-gray-400 text-sm"
-                />
-                <input
-                  required
-                  placeholder="เบอร์โทร"
-                  className="px-3 py-2 rounded-lg border border-white/20 bg-white/10 text-white placeholder-gray-400 text-sm"
-                />
-              </div>
-              <input
-                placeholder="อีเมล (ถ้ามี)"
-                className="w-full px-3 py-2 rounded-lg border border-white/20 bg-white/10 text-white placeholder-gray-400 text-sm"
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-white shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <a href="#" className="flex items-center space-x-3">
+              <img
+                src="/logo.png"
+                alt="Knock Store Logo"
+                className="h-10 w-auto"
               />
-              <textarea
-                placeholder="ความต้องการสินค้า/บริการ"
-                rows={4}
-                className="w-full px-3 py-2 rounded-lg border border-white/20 bg-white/10 text-white placeholder-gray-400 text-sm"
-              ></textarea>
-              <button
-                type="submit"
-                className="w-full px-4 py-2 rounded-lg font-semibold text-black shadow-lg hover:shadow-xl transition-all duration-200"
-                style={{
-                  background: "linear-gradient(135deg, #F7931E, #FFA947)",
-                }}
-              >
-                ส่งคำขอ
-              </button>
-            </form>
-          </Card>
+              <span className="text-sm font-light text-gray-500 hidden sm:block"
+              >Store Co., Ltd</span>
+            </a>
+            <div className="space-x-4">
+              <a
+                href="#about"
+                className="text-gray-600 font-medium transition duration-150 ease-in-out hidden sm:inline-block"
+                onMouseEnter={(e) => e.currentTarget.style.color = "#2E3192"}
+                onMouseLeave={(e) => e.currentTarget.style.color = "#4b5563"}
+              >เกี่ยวกับเรา</a>
+              <a
+                href="#products"
+                className="text-gray-600 font-medium transition duration-150 ease-in-out hidden sm:inline-block"
+                onMouseEnter={(e) => e.currentTarget.style.color = "#2E3192"}
+                onMouseLeave={(e) => e.currentTarget.style.color = "#4b5563"}
+              >ผลิตภัณฑ์</a>
+              <a
+                href="#services"
+                className="text-gray-600 font-medium transition duration-150 ease-in-out hidden sm:inline-block"
+                onMouseEnter={(e) => e.currentTarget.style.color = "#2E3192"}
+                onMouseLeave={(e) => e.currentTarget.style.color = "#4b5563"}
+              >บริการ</a>
+              <a href="#contact" className="btn-primary py-2 px-4 text-sm"
+              >ติดต่อเรา</a>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-          <Card title="ชั่วโมงทำการ">
-            <div className="space-y-2">
-              <p>จันทร์–เสาร์ • 08:30–17:30</p>
-              <p className="text-xs text-gray-500">
-                *เวลาทำการจัดส่งขึ้นกับพื้นที่ ให้ทีมงานยืนยันรอบจัดส่งอีกครั้ง
+      <main>
+        {/* Hero Section (Updated Layout and Design) */}
+        <section
+          id="hero"
+          className="diagonal-bg pt-20 pb-40 text-white overflow-hidden"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20-content">
+            <div
+              className="grid md:grid-cols-2 gap-10 items-center text-center md:text-left"
+            >
+              {/* Left Column: Text and CTA */}
+              <div>
+                <span
+                  className="inline-block px-4 py-1 text-sm font-bold uppercase tracking-wider rounded-full mb-4 shadow-lg"
+                  style={{ backgroundColor: "#F7931E", color: "#2E3192" }}
+                >
+                  The Essential F&B Supplier
+                </span>
+                <h1
+                  className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-tight"
+                >
+                  คู่ค้าที่ขาดไม่ได้
+                  <span className="block mt-2"
+                    style={{ color: "#F7931E" }}
+                    >ของทุกร้านอาหารทั่วประเทศ</span
+                  >
+                </h1>
+                <p
+                  className="mt-4 max-w-lg mx-auto md:mx-0 text-xl text-gray-100 font-light"
+                >
+                  เราเชี่ยวชาญในการจัดจำหน่ายของใช้สิ้นเปลืองและโซลูชั่นโลจิสติกส์
+                  เพื่อช่วยให้ธุรกิจร้านอาหารของคุณเติบโตได้อย่างมั่นคง
+                </p>
+                <div
+                  className="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start"
+                >
+                  {/* Button "ดูผลิตภัณฑ์ทั้งหมด" - NEW DESIGN */}
+                  <a
+                    href="#products"
+                    className="btn-primary-hero"
+                  >
+                    ดูผลิตภัณฑ์ทั้งหมด
+                  </a>
+                  {/* Button "ระบบขนส่งของเรา" - NEW DESIGN */}
+                  <a
+                    href="#services"
+                    className="btn-secondary-hero"
+                  >
+                    ระบบขนส่งของเรา
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column: Visual Element Placeholder */}
+              <div className="hidden md:block">
+                <div
+                  className="bg-white/10 p-6 rounded-3xl shadow-2xl backdrop-blur-sm transform rotate-3 scale-95 transition-transform duration-500"
+                >
+                  <p className="text-xl font-bold mb-2"
+                    style={{ color: "#F7931E" }}>
+                    KNOCK STORE SUPPLY CHAIN
+                  </p>
+                  <div
+                    className="h-64 flex items-center justify-center text-lg text-gray-200 border-2 border-dashed border-gray-400 rounded-xl"
+                  >
+                    โมเดล 3D/ภาพประกอบแสดง อาคาร, รถขนส่ง, และกล่องสินค้า
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* New Section: CEO Quote (Fixed Overlap) */}
+        <section id="ceo-quote" className="py-12 md:py-16 bg-f7f7f7">
+          <div
+            className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 md:-mt-16 z-20"
+          >
+            <div className="p-8 md:p-10 rounded-3xl quote-style card-shadow">
+              <p
+                className="text-xl sm:text-2xl italic font-medium leading-relaxed z-20-content"
+                style={{ color: "#2E3192" }}
+              >
+                "เราไม่ได้ส่งแค่ของใช้ แต่ เราส่งมอบ **ความมั่นใจ ความสะดวก
+                และความคุ้มค่า** ให้กับทุกร้านอาหารที่เลือกน็อคสโตร์ เป็นคู่ค้า
+                เพราะเราเติบโตไปพร้อมกับคุณ"
+              </p>
+              <div className="mt-6 pt-4 border-t border-gray-100 z-20-content">
+                <p className="text-right text-lg font-bold text-gray-800">
+                  วรวิทย์ วิวัฒนารรรม
+                </p>
+                <p className="text-right text-xs font-semibold"
+                  style={{ color: "#F7931E" }}>
+                  Voravit wiwatthanatham | ประธานกรรมการ
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission & Vission / Company History (Updated Cards) */}
+        <section id="about" className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-extrabold mb-3"
+                style={{ color: "#2E3192" }}>
+                เกี่ยวกับบริษัท (ABOUT COMPANY)
+              </h2>
+              <p className="text-xl text-gray-500 max-w-3xl mx-auto">
+                บริษัท น็อคสโตร์ จํากัด ก่อตั้งขึ้นในปี **2560 (2017)**
+                โดยเล็งเห็นถึงโอกาสทางธุรกิจร้านอาหาร
+                และปัญหาในการจัดการสต๊อกและขนส่งสินค้าประเภทของใช้สิ้นเปลือง
               </p>
             </div>
-          </Card>
-        </div>
-        <p className="text-xs text-gray-500 mt-6 text-center">
-          ที่มาเนื้อหา: Company profile PDF ของลูกค้า
-        </p>
-      </Section>
 
-      <Footer />
-    </div>
+            {/* Mission & Vision Cards (Modern Numbered Style) */}
+            <div className="grid md:grid-cols-2 gap-8">
+              <div
+                className="p-8 bg-white rounded-xl card-shadow border-l-4 border-amber-500 about-card transition duration-300 hover:shadow-xl hover:translate-y-[-2px]"
+              >
+                <span className="text-5xl font-extrabold text-amber-600 block mb-3"
+                  >01</span
+                >
+                <h3
+                  className="text-2xl font-bold text-blue-900 mb-3 flex items-center"
+                >
+                  <svg
+                    className="w-6 h-6 mr-2 text-amber-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                  MISSION: เป้าหมายหลัก
+                </h3>
+                <p className="text-gray-700 text-lg">
+                  น็อคสโตร์
+                  หวังเป็นพลังขับเคลื่อนหลักเบื้องหลังความสำเร็จของทุกร้านอาหารทั่วประเทศ
+                  เรามุ่งหวังเพื่อสร้างมาตรฐานใหม่ของบริการซัพพลายเออร์ที่เหนือกว่าสำหรับธุรกิจอาหาร
+                </p>
+              </div>
+              <div
+                className="p-8 bg-white rounded-xl card-shadow border-l-4 border-blue-900 about-card transition duration-300 hover:shadow-xl hover:translate-y-[-2px]"
+              >
+                <span className="text-5xl font-extrabold text-blue-900 block mb-3"
+                  >02</span
+                >
+                <h3
+                  className="text-2xl font-bold text-blue-900 mb-3 flex items-center"
+                >
+                  <svg
+                    className="w-6 h-6 mr-2 text-blue-900"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 19V6l12-3v14m-9 0V9l12 3"
+                    ></path>
+                  </svg>
+                  VISION: มุมมองธุรกิจ
+                </h3>
+                <p className="text-gray-700 text-lg">
+                  ด้วยความหลากหลายของสินค้าและการขนส่งที่รวดเร็วและถูกต้อง
+                  ทำให้เราช่วยลดต้นทุนและประหยัดเวลาในการดูแลสินค้า
+                  โดยเน้นสร้างคุณค่าของสินค้าและบริการเพื่อความพึงพอใจของลูกค้าเป็นภารกิจหลัก.
+                </p>
+              </div>
+            </div>
+
+            {/* History Highlights (Timeline/Highlight Card Style) */}
+            <div className="mt-20">
+              <h3 className="text-3xl font-bold text-blue-900 text-center mb-10">
+                ประวัติผลงาน (Our Customer Highlights)
+              </h3>
+              <div className="grid lg:grid-cols-3 gap-8">
+                {/* 2022 */}
+                <div
+                  className="p-6 bg-white rounded-xl border-t-4 border-amber-500 transition duration-300 hover:shadow-xl card-shadow"
+                >
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="text-3xl font-extrabold text-blue-900">2022</h4>
+                    <span
+                      className="text-sm font-semibold text-white bg-blue-900 rounded-full px-3 py-1"
+                    >Expansion</span
+                    >
+                  </div>
+                  <p className="text-gray-700 font-medium border-t pt-3">
+                    เริ่มต้นแคมเปญ **"สั่งวันนี้ได้รับของวันพรุ่งนี้"**
+                    ทั่วกรุงเทพฯ และปริมณฑล สร้างความไว้วางใจในความรวดเร็ว.
+                  </p>
+                </div>
+                {/* 2023 */}
+                <div
+                  className="p-6 bg-white rounded-xl border-t-4 border-amber-500 transition duration-300 hover:shadow-xl card-shadow"
+                >
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="text-3xl font-extrabold text-blue-900">2023</h4>
+                    <span
+                      className="text-sm font-semibold text-white bg-blue-900 rounded-full px-3 py-1"
+                    >Partnership</span
+                    >
+                  </div>
+                  <p className="text-gray-700 font-medium border-t pt-3">
+                    ขยายฐานลูกค้าหลักกลุ่มร้านอาหารหลายสาขา เช่น ย่างเนย,
+                    สุกี้จินดา, และเป็นคู่ค้าหลักกับ ลัคกี้สุกี้ (ครบ 31 สาขา).
+                  </p>
+                </div>
+                {/* 2024 - Present */}
+                <div
+                  className="p-6 bg-white rounded-xl border-t-4 border-amber-500 transition duration-300 hover:shadow-xl card-shadow"
+                >
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="text-3xl font-extrabold text-blue-900">2024+</h4>
+                    <span
+                      className="text-sm font-semibold text-white bg-blue-900 rounded-full px-3 py-1"
+                    >Leadership</span
+                    >
+                  </div>
+                  <p className="text-gray-700 font-medium border-t pt-3">
+                    ตอกย้ำความเป็นผู้นำด้านซัพพลายเออร์ ด้วยการเป็นคู่ค้าหลักกับ
+                    **สุกี้ตี๋น้อย** ครอบคลุมการจัดส่งสินค้าถึง 92 สาขาทั่วประเทศ.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Products Section (Updated with Real Images) */}
+        <section id="products" className="bg-white py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <span className="text-base font-semibold text-amber-600 uppercase"
+                >สินค้าหลากหลาย ครบ จบที่เดียว</span
+              >
+              <h2 className="text-4xl font-extrabold text-blue-900 mt-2">
+                ผลิตภัณฑ์ของ น็อคสโตร์
+              </h2>
+              <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
+                เนื่องจากเราเน้นจำหน่ายสินค้าไปที่กลุ่มร้านอาหารเป็นหลัก
+                ทำให้เรามีสินค้าสิ้นเปลืองหลากหลายชนิดครบทุกประเภท (มากกว่า 300
+                รายการ)
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Product Category 1: Cleaning Agents */}
+              <div
+                className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
+              >
+                <div className="product-image-container">
+                  <img
+                    src="/pages/client_01_01.png"
+                    alt="น้ำยาทำความสะอาดต่างๆ"
+                    className="product-image"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">
+                  น้ำยาทำความสะอาดต่างๆ
+                </h3>
+                <p className="text-gray-600">
+                  น้ำยาล้างจาน, ถูพื้น, ล้างห้องน้ำ, เช็ดกระจก, สบู่ล้างมือ
+                  และน้ำยาอื่นๆ.
+                </p>
+              </div>
+
+              {/* Product Category 2: Paper Products */}
+              <div
+                className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
+              >
+                <div className="product-image-container">
+                  <img
+                    src="/pages/client_01_02.png"
+                    alt="กระดาษประเภทต่างๆ"
+                    className="product-image"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">
+                  กระดาษประเภทต่างๆ
+                </h3>
+                <p className="text-gray-600">
+                  กระดาษป๊อปอัพ, กระดาษเช็ดมือ, กระดาษชำระ และกระดาษอื่นๆ.
+                </p>
+              </div>
+
+              {/* Product Category 3: Bags */}
+              <div
+                className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
+              >
+                <div className="product-image-container">
+                  <img
+                    src="/pages/client_01_03.png"
+                    alt="ถุงประเภทต่างๆ"
+                    className="product-image"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">
+                  ถุงประเภทต่างๆ
+                </h3>
+                <p className="text-gray-600">
+                  ถุงร้อน, ถุงเย็น, ถุงหูหิ้ว, ถุงขยะ, ถุงพิมพ์โลโก้ และถุงอื่นๆ.
+                </p>
+              </div>
+
+              {/* Product Category 4: Food Packaging */}
+              <div
+                className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
+              >
+                <div className="product-image-container">
+                  <img
+                    src="/pages/client_01_04.png"
+                    alt="บรรจุภัณฑ์ใส่อาหาร"
+                    className="product-image"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">
+                  บรรจุภัณฑ์ใส่อาหาร
+                </h3>
+                <p className="text-gray-600">
+                  กล่องอาหารเหลี่ยม/กลม, ถ้วยน้ำจิ้ม, กล่องซูชิ, กล่องเบนโตะ
+                  และอื่นๆ.
+                </p>
+              </div>
+
+              {/* Product Category 5: Cleaning Tools */}
+              <div
+                className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
+              >
+                <div className="product-image-container">
+                  <img
+                    src="/pages/client_01_05.png"
+                    alt="อุปกรณ์ทำความสะอาด"
+                    className="product-image"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">
+                  อุปกรณ์ทำความสะอาด
+                </h3>
+                <p className="text-gray-600">
+                  สกอตไบรท์, ฟองน้ำติดไบรท์, ฝอยขัด, ไม้ถูพื้น, แปรงขัดพื้น
+                  และอื่นๆ.
+                </p>
+              </div>
+
+              {/* Product Category 6: Food Film */}
+              <div
+                className="p-6 rounded-xl card-shadow product-card transition duration-300 flex flex-col items-center text-center"
+              >
+                <div className="product-image-container">
+                  <img
+                    src="/pages/client_01_06.png"
+                    alt="ฟิลม์ห่ออาหาร"
+                    className="product-image"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">
+                  ฟิลม์ห่ออาหาร
+                </h3>
+                <p className="text-gray-600">ฟิล์มม้วนห่ออาหารทุกขนาด</p>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <a href="#contact" className="btn-primary py-3 px-6 text-lg">
+                สั่งซื้อวันนี้ พร้อมจัดส่งรวดเร็ว
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Services & Strengths Section */}
+        <section id="services" className="py-16 md:py-24 bg-knock-blue text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <span className="text-base font-semibold text-knock-gold uppercase"
+                >OUR SERVICE & STRENGTHS</span
+              >
+              <h2 className="text-4xl font-extrabold mt-2">
+                บริการหลัก และ ข้อดีของน็อคสโตร์
+              </h2>
+            </div>
+
+            {/* Services Overview Block (Service Card Focus) */}
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              <div
+                className="p-6 bg-white/10 rounded-xl border border-knock-gold/50 hover:bg-white/20 transition duration-300"
+              >
+                <h3
+                  className="text-2xl font-bold text-knock-gold mb-2 flex items-center"
+                >
+                  <svg
+                    className="w-6 h-6 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.04 12.04 0 002.944 12c.045 4.049 1.488 7.842 4.09 10.957L12 24l5.066-1.579c2.618-3.115 4.06-6.908 4.09-10.957l.004-.265v-2.155a.999.999 0 00-1-1.001z"
+                    ></path>
+                  </svg>
+                  ผลิตภัณฑ์ครบวงจร
+                </h3>
+                <p className="text-gray-200">
+                  น็อคสโตร์
+                  มีสินค้าประเภทของใช้สิ้นเปลืองที่ร้านอาหารใช้ครบทุกประเภท
+                  เพื่อให้ครบวงจรแก่ลูกค้า
+                </p>
+              </div>
+              <div
+                className="p-6 bg-white/10 rounded-xl border border-knock-gold/50 hover:bg-white/20 transition duration-300"
+              >
+                <h3
+                  className="text-2xl font-bold text-knock-gold mb-2 flex items-center"
+                >
+                  <svg
+                    className="w-6 h-6 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7a2 2 0 012-2z"
+                    ></path>
+                  </svg>
+                  สต๊อกสินค้าพร้อมส่ง
+                </h3>
+                <p className="text-gray-200">
+                  เรามีสต็อกสินค้าเพียงพอต่อความต้องการของลูกค้า
+                  ทำให้คุณไม่ต้องกังวลเรื่องของขาดมือและสั่งของได้ตามต้องการ
+                </p>
+              </div>
+            </div>
+
+            {/* Strengths Grid (Enhanced Layout) */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+              {/* Strength 1: Logistics (Focus Card) */}
+              <div
+                className="col-span-full md:col-span-1 lg:col-span-2 p-8 bg-knock-gold text-knock-blue rounded-2xl card-shadow transition duration-300 hover:scale-[1.03] transform"
+              >
+                <h3 className="text-3xl font-extrabold mb-3 flex items-center">
+                  <span className="text-5xl font-extrabold mr-3">01</span>
+                  ขนส่งรวดเร็ว
+                </h3>
+                <p className="text-xl font-medium">
+                  ส่งถึงมือลูกค้า **ภายในวัน** (สั่งออเดอร์ก่อน 9.00) หรือ
+                  **ไม่เกิน 24 ชม.** ด้วยระบบจัดการที่พร้อมที่สุด
+                </p>
+              </div>
+
+              {/* Strength 2: Variety */}
+              <div
+                className="lg:col-span-1 p-6 bg-white text-knock-blue rounded-xl card-shadow flex flex-col space-y-2 border-b-4 border-knock-gold"
+              >
+                <span className="text-4xl font-extrabold text-knock-gold">02</span>
+                <h3 className="text-xl font-bold">สินค้าหลากหลาย</h3>
+                <p className="text-gray-700 text-sm">
+                  300+ รายการ 20 ประเภทสินค้า (One Stop Service)
+                </p>
+              </div>
+
+              {/* Strength 3: Cost Saving (Delivery) */}
+              <div
+                className="lg:col-span-1 p-6 bg-white text-knock-blue rounded-xl card-shadow flex flex-col space-y-2 border-b-4 border-knock-gold"
+              >
+                <span className="text-4xl font-extrabold text-knock-gold">03</span>
+                <h3 className="text-xl font-bold">ประหยัดค่าจัดส่ง</h3>
+                <p className="text-gray-700 text-sm">
+                  ลดต้นทุนกว่า 8% ไม่ต้องเสียค่าใช้จ่ายในการรับ/กระจายสินค้าเอง
+                </p>
+              </div>
+
+              {/* Strength 4: Better Price */}
+              <div
+                className="lg:col-span-1 p-6 bg-white text-knock-blue rounded-xl card-shadow flex flex-col space-y-2 border-b-4 border-knock-gold"
+              >
+                <span className="text-4xl font-extrabold text-knock-gold">04</span>
+                <h3 className="text-xl font-bold">ราคาสุดคุ้ม</h3>
+                <p className="text-gray-700 text-sm">
+                  สั่งซื้อตรงจากโรงงานในปริมาณมาก ทำให้ได้ราคาที่ดีกว่ามาก
+                </p>
+              </div>
+
+              {/* Strength 5: Stock Management */}
+              <div
+                className="col-span-full md:col-span-2 lg:col-span-5 p-6 bg-white text-knock-blue rounded-xl card-shadow flex items-center space-x-6 border-l-4 border-knock-blue/50"
+              >
+                <span
+                  className="text-4xl font-extrabold text-knock-gold flex-shrink-0"
+                >05</span
+                >
+                <div>
+                  <h3 className="text-2xl font-bold mb-1">ไม่ต้องสต๊อกสินค้าเยอะ</h3>
+                  <p className="text-gray-700">
+                    ด้วยความรวดเร็วในการส่งสินค้าของเรา
+                    ลูกค้าจึงไม่ต้องสต๊อกสินค้าปริมาณมาก
+                    ทำให้ลดต้นทุนในการสต็อกสินค้า
+                    และประหยัดพื้นที่ในการจัดเก็บสินค้า.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Logistics Coverage Map (Placeholder) */}
+            <div
+              className="mt-20 p-8 border-2 border-dashed border-knock-gold rounded-xl bg-knock-blue/10 text-center text-xl text-gray-100"
+            >
+              <p className="font-bold text-3xl mb-3 text-knock-gold">
+                ครอบคลุมหัวเมืองหลักทั่วประเทศ
+              </p>
+              <p className="text-gray-200 text-base md:text-lg">
+                กรุงเทพฯ และปริมณฑล, ชลบุรีและพัทยา, นครราชสีมา, บุรีรัมย์,
+                ขอนแก่น, พิษณุโลก, เชียงใหม่, นครสวรรค์, ราชบุรี, ประจวบคีรีขันธ์,
+                ชุมพร
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-16 md:py-24 bg-white">
+          <div
+            className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 p-8 rounded-2xl card-shadow"
+          >
+            <div className="text-center mb-10">
+              <h2 className="text-4xl font-extrabold text-knock-blue mb-3">
+                ติดต่อเรา
+              </h2>
+              <p className="text-xl text-gray-500">
+                พร้อมให้คำปรึกษาและเป็นคู่ค้าทางธุรกิจของคุณ
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {/* Head Office Info */}
+              <div
+                className="flex items-start space-x-4 p-4 border-l-4 border-knock-gold bg-gray-50 rounded-lg"
+              >
+                <svg
+                  className="w-6 h-6 text-knock-blue flex-shrink-0 mt-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                </svg>
+                <div>
+                  <p className="font-semibold text-knock-blue">
+                    บริษัท น็อคสโตร์ จำกัด (สำนักงานใหญ่)
+                  </p>
+                  <p className="text-gray-700">
+                    103 หมู่ 1 ต.บางศรีเมือง อ.เมืองนนทบุรี จ.นนทบุรี 11000
+                  </p>
+                </div>
+              </div>
+
+              {/* Phone Info */}
+              <div
+                className="flex items-start space-x-4 p-4 border-l-4 border-knock-gold bg-gray-50 rounded-lg"
+              >
+                <svg
+                  className="w-6 h-6 text-knock-blue flex-shrink-0 mt-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  ></path>
+                </svg>
+                <div>
+                  <p className="font-semibold text-knock-blue">โทรศัพท์</p>
+                  <a
+                    href="tel:0892013316"
+                    className="text-xl font-bold text-knock-gold hover:underline"
+                  >089-2013316</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 text-center">
+              <p className="text-gray-600">Knock Store Co., Ltd</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-knock-blue py-8">
+        <div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-300"
+        >
+          <p>&copy; 2024 Knock Store Co., Ltd. All rights reserved.</p>
+        </div>
+      </footer>
+    </>
   );
 }

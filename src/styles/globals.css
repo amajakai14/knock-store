@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --knock-blue: #1e3a8a; /* Dark Blue from the profile */
+  --knock-gold: #f59e0b; /* Tailwind Amber/Gold for accent */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --font-sans: "Noto Sans Thai", "Inter", sans-serif;
+  --color-knock-blue: var(--knock-blue);
+  --color-knock-gold: var(--knock-gold);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Noto Sans Thai", "Inter", sans-serif;
+  background-color: #f7f7f7;
+  scroll-behavior: smooth;
+}
+
+/* Primary Button Style - Now used for "ดูผลิตภัณฑ์ทั้งหมด" */
+.btn-primary-hero {
+  @apply inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full shadow-xl transition duration-300 ease-in-out transform hover:scale-[1.05] hover:shadow-2xl border-2;
+  border-color: var(--knock-gold);
+  background-color: var(--knock-gold);
+  color: var(--knock-blue);
+}
+
+/* Secondary Button Style - Now used for  */
+.btn-secondary-hero {
+  @apply inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full transition duration-300 shadow-md transform hover:scale-[1.03];
+  border: 2px solid var(--knock-gold);
+  color: var(--knock-gold);
+  background-color: transparent;
+}
+
+.btn-secondary-hero:hover {
+  background-color: var(--knock-gold);
+  color: var(--knock-blue);
+}
+
+/* General Primary Button (for other sections if needed) */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-[1.03];
+  background-color: var(--knock-gold);
+  color: var(--knock-blue);
+}
+
+.card-shadow {
+  /* Softer shadow */
+  box-shadow:
+    0 8px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+/* Modern Diagonal Background for Hero */
+.diagonal-bg {
+  background: linear-gradient(
+    135deg,
+    var(--knock-blue) 0%,
+    #3b82f6 100%
+  ); /* Blue gradient for depth */
+  position: relative;
+  z-index: 1;
+}
+.diagonal-bg::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: #f7f7f7;
+  /* Smoother, more elegant cut */
+  transform: skewY(-2deg);
+  transform-origin: bottom left;
+  z-index: 10;
+}
+
+/* Modern Quote Style */
+.quote-style {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+.quote-style:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+.quote-style::before {
+  content: "";
+  font-family: "Noto Sans Thai", sans-serif;
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 8rem;
+  line-height: 1;
+  color: rgba(245, 158, 11, 0.15); /* Slightly darker transparent gold */
+  z-index: 0;
+  pointer-events: none;
+}
+.z-20-content {
+  z-index: 20;
+  position: relative;
+}
+
+/* Mission/Vision Card Hover Effect */
+.about-card:hover {
+  border-left-width: 8px;
+}
+
+/* Product Image Style */
+.product-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+.product-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+.product-image-container {
+  height: 120px; /* Fixed height for image consistency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.product-image {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  border-radius: 0.5rem;
 }

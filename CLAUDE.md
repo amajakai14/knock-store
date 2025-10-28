@@ -8,7 +8,7 @@ This is a Next.js 16 application called "knock-store" displaying company informa
 The brand identity colors (Corporate Identity or CI) of this companyare primarily:
 This project is mainly use Thai language
 
-Royal Blue (#2E3192) – used as the main background on the left and for graphic accents.
+Royal Blue (#2E3192) or "oklch(0.3775 0.1559 274.67)" – used as the main background on the left and for graphic accents.
 
 Orange (#F7931E) – used for highlight elements and parts of the logo.
 
@@ -60,4 +60,3 @@ The app expects images in the `public/pages/` directory with the naming pattern:
 - Uses absolute imports with `@/` prefix for src directory
 - Tailwind CSS v4 with custom theme configuration
 - App is set up for both light and dark mode via CSS variables
-
