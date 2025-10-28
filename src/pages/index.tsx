@@ -6,6 +6,7 @@ export default function Home() {
       <Head>
         <title>KNOCK STORE CO., LTD. - คู่ค้าที่ขาดไม่ได้ของทุกร้านอาหาร</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Navigation */}
